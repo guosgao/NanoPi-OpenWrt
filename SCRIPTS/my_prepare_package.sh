@@ -19,8 +19,7 @@ sed -i '/# Ram-free/,/fuck/d' 02_prepare_package.sh
 
 
 ################ 自定义部分 -Start- ################
-# 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
-sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
+# 调整 LuCI 依，替换主题 bootstrap 为 argo
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 
 # Argon 主题
@@ -42,7 +41,7 @@ bash ${OP_SC_DIR}/../PATCH/app/ShellClash.sh
 # sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 
 # 调整默认 LAN IP
-sed -i 's/192.168.1.1/192.168.24.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
 ################ 自定义部分 -End- ################
 
 
