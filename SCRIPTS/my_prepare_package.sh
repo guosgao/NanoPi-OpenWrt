@@ -28,6 +28,10 @@ bash ${OP_SC_DIR}/../PATCH/app/Argon.sh
 # ShellClash
 bash ${OP_SC_DIR}/../PATCH/app/ShellClash.sh
 
+#增加风扇调速（被动散热不香么？
+wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/etc/init.d/fa-rk3328-pwmfan
+wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/usr/bin/start-rk3328-pwm-fan.sh
+
 # frpc
 # bash ${OP_SC_DIR}/../PATCH/app/frpc.sh
 
